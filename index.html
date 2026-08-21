@@ -186,13 +186,13 @@
 
       <!-- Battery Module & SiC Architecture Interactive Showcase -->
       <div class="mt-12 glass-panel-glow p-6 sm:p-8 rounded-3xl">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-700/60">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-slate-700/60">
           <div>
             <div class="flex items-center gap-2 mb-1">
-              <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Technology Architecture</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-300">Patent-Ready Design</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Digital Hardware Prototype</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">800V–1200V Ready</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-black text-white">SiCharge SiC Power Module vs Conventional Silicon IGBT</h3>
+            <h3 class="text-xl sm:text-2xl font-black text-white">SiCharge SiC Power Module & Battery Pack Prototype</h3>
           </div>
           <button id="btn-toggle-comparator" class="px-5 py-2.5 rounded-xl bg-slate-800 border border-cyan-500/40 text-cyan-300 font-bold text-xs hover:bg-cyan-500 hover:text-slate-950 transition-all flex items-center gap-2 shrink-0 shadow-lg">
             <i data-lucide="refresh-cw" class="w-4 h-4"></i>
@@ -200,46 +200,62 @@
           </button>
         </div>
 
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          <!-- Visual Card -->
-          <div class="bg-slate-950/80 p-6 rounded-2xl border border-slate-800 flex flex-col items-center justify-center text-center">
-            <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/40 flex items-center justify-center mb-4 relative group">
-              <i data-lucide="cpu" class="w-12 h-12 text-cyan-400 animate-pulse"></i>
-              <div class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-slate-950"></div>
+        <!-- 3D Prototype Image & Technical Architecture -->
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Prototype Image Viewer (7 Cols) -->
+          <div class="lg:col-span-7 relative group rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl bg-slate-950">
+            <img src="assets/images/sicharge_prototype.jpg" alt="SiCharge Silicon Carbide High-Voltage Battery Module Prototype" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold text-cyan-300 block">SiCharge 1200V Power Module Prototype</span>
+                <span class="text-[11px] text-slate-400">Isometric cutaway: SiC MOSFET dies, direct liquid cooling & gate drivers</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                CAD Prototype #01
+              </span>
             </div>
-            <div id="comparator-status-label" class="text-cyan-400 font-bold text-sm">
-              Displaying: SiCharge Silicon Carbide (SiC) MOSFET
-            </div>
-            <p class="text-xs text-slate-400 mt-2">Pack-integrated power module with direct ceramic cooling baseplate</p>
           </div>
 
-          <!-- Specs Columns -->
-          <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="glass-card p-3.5 rounded-xl border border-slate-700/50">
-              <span class="text-[11px] text-slate-400 block mb-1">Bandgap Energy</span>
-              <strong id="spec-bandgap" class="text-sm font-bold text-white transition-colors">3.26 eV (Wide Bandgap)</strong>
+          <!-- Specs & Architecture Columns (5 Cols) -->
+          <div class="lg:col-span-5 space-y-4">
+            <div id="comparator-status-label" class="text-cyan-400 font-bold text-sm bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+              Displaying: SiCharge Silicon Carbide (SiC) MOSFET Architecture
             </div>
-            <div class="glass-card p-3.5 rounded-xl border border-slate-700/50">
-              <span class="text-[11px] text-slate-400 block mb-1">Breakdown Field</span>
-              <strong id="spec-field" class="text-sm font-bold text-white transition-colors">3.0 MV/cm (10x Strength)</strong>
+
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="glass-card p-3 rounded-xl border border-slate-700/50">
+                <span class="text-[11px] text-slate-400 block mb-0.5">Bandgap Energy</span>
+                <strong id="spec-bandgap" class="text-sm font-bold text-white transition-colors">3.26 eV (Wide Bandgap)</strong>
+              </div>
+              <div class="glass-card p-3 rounded-xl border border-slate-700/50">
+                <span class="text-[11px] text-slate-400 block mb-0.5">Breakdown Field</span>
+                <strong id="spec-field" class="text-sm font-bold text-white transition-colors">3.0 MV/cm (10x Strength)</strong>
+              </div>
+              <div class="glass-card p-3 rounded-xl border border-slate-700/50">
+                <span class="text-[11px] text-slate-400 block mb-0.5">Thermal Conductivity</span>
+                <strong id="spec-thermal" class="text-sm font-bold text-white transition-colors">4.9 W/cm·K (3.3x Cooling)</strong>
+              </div>
+              <div class="glass-card p-3 rounded-xl border border-slate-700/50">
+                <span class="text-[11px] text-slate-400 block mb-0.5">Max Junction Temp</span>
+                <strong id="spec-temp" class="text-sm font-bold text-white transition-colors">200°C+ Junction Temp</strong>
+              </div>
+              <div class="glass-card p-3 rounded-xl border border-slate-700/50">
+                <span class="text-[11px] text-slate-400 block mb-0.5">Switching Losses</span>
+                <strong id="spec-losses" class="text-sm font-bold text-white transition-colors">70% Loss Reduction</strong>
+              </div>
+              <div class="glass-card p-3 rounded-xl border border-slate-700/50">
+                <span class="text-[11px] text-slate-400 block mb-0.5">EV Fast Charging</span>
+                <strong id="spec-charging" class="text-sm font-bold text-white transition-colors">800V-1200V Native</strong>
+              </div>
             </div>
-            <div class="glass-card p-3.5 rounded-xl border border-slate-700/50">
-              <span class="text-[11px] text-slate-400 block mb-1">Thermal Conductivity</span>
-              <strong id="spec-thermal" class="text-sm font-bold text-white transition-colors">4.9 W/cm·K (3.3x Cooling)</strong>
-            </div>
-            <div class="glass-card p-3.5 rounded-xl border border-slate-700/50">
-              <span class="text-[11px] text-slate-400 block mb-1">Max Junction Temp</span>
-              <strong id="spec-temp" class="text-sm font-bold text-white transition-colors">200°C+ Junction Temp</strong>
-            </div>
-            <div class="glass-card p-3.5 rounded-xl border border-slate-700/50">
-              <span class="text-[11px] text-slate-400 block mb-1">Switching Losses</span>
-              <strong id="spec-losses" class="text-sm font-bold text-white transition-colors">70% Loss Reduction</strong>
-            </div>
-            <div class="glass-card p-3.5 rounded-xl border border-slate-700/50">
-              <span class="text-[11px] text-slate-400 block mb-1">EV Fast Charging</span>
-              <strong id="spec-charging" class="text-sm font-bold text-white transition-colors">800V-1200V Native</strong>
+
+            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800 text-[11px] text-slate-300 leading-relaxed">
+              <strong class="text-white block mb-0.5 font-semibold">Key Prototype Features:</strong>
+              Dual 800V-1200V high-voltage quick connectors, direct ceramic micro-channel liquid cooling baseplate, and gold-plated low-inductance busbars enabling sub-10 minute EV charging cycles.
             </div>
           </div>
+
         </div>
       </div>
     </div>
